@@ -1,6 +1,41 @@
 #root {
-  width: 100%;
   min-height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0b0b14ee;
+  border-bottom: 1px solid #30233f;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #c084fc;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #aaa;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #c084fc;
 }
 
 main {
@@ -12,15 +47,77 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px;
+  padding: 120px 10%;
 }
 
 #intro h1 {
-  font-size: 3rem;
-  color: #a855f7;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #c084fc;
 }
 
 #intro p {
-  font-size: 1.2rem;
   max-width: 600px;
+  line-height: 1.7;
+}
+
+.page-section {
+  min-height: 60vh;
+  padding: 100px 10%;
+  scroll-margin-top: 80px;
+}
+
+.page-section h2 {
+  color: #c084fc;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.content-card {
+  background: #15121e;
+  border: 1px solid #453452;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.content-card p {
+  color: #b4adbf;
+  line-height: 1.6;
+}
+
+.content-card a {
+  color: #c084fc;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  max-width: 500px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  #intro,
+  .page-section {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
 }
